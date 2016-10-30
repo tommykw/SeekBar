@@ -2,6 +2,7 @@ package com.github.tommykw.`as`
 
 import android.os.Bundle
 import com.google.vr.sdk.base.*
+import jmini3d.JMini3d
 import jmini3d.Renderer3d
 import javax.microedition.khronos.egl.EGLConfig
 import kotlin.properties.Delegates
@@ -32,7 +33,11 @@ class MainActivity : GvrActivity(), GvrView.StereoRenderer {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        JMini3d.useOpenglAxisSystem()
+        initGvrView()
+    }
+
+    private fun initGvrView() {
     }
 
     companion object {
